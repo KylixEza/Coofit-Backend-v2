@@ -1,5 +1,7 @@
-package com.pemweb.app
+package com.pemweb
 
+import com.pemweb.plugins.configureRouting
+import com.pemweb.plugins.configureSerialization
 import com.pemweb.di.controllerModule
 import com.pemweb.di.databaseModule
 import com.pemweb.di.repositoryModule

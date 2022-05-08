@@ -1,4 +1,4 @@
-package com.pemweb.app
+package com.pemweb.plugins
 
 import io.ktor.gson.*
 import io.ktor.features.*

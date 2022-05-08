@@ -1,4 +1,4 @@
-package com.pemweb.app
+package com.pemweb.plugins
 
 import com.pemweb.route.menu.MenuRoute
 import com.pemweb.route.user.UserRoute

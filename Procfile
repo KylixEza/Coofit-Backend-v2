@@ -1,1 +1,1 @@
-web: build/install/coofit-backend-v2/bin/coofit-backend-v2/app
+web: build/install/coofit-backend-v2/bin/coofit-backend-v2
