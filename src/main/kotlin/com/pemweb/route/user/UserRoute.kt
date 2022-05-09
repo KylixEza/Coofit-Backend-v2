@@ -30,12 +30,12 @@ class UserRoute(
 	}
 	
 	private fun Route.getIdOfUser() {
-		get<UserRouteLocation.UserIdGetRoute> {
+		post<UserRouteLocation.UserIdGetRoute> {
 			val body = try {
 				call.receive<LoginBody>()
 			} catch (e: Exception) {
 				call.generalException(e)
-				return@get
+				return@post
 			}
 			
 			controller.apply { call.getIdOfUser(body) }
