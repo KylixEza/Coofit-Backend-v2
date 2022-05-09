@@ -9,6 +9,8 @@ import com.pemweb.di.routeModule
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import io.ktor.application.*
+import io.ktor.features.*
+import io.ktor.http.*
 import io.ktor.locations.*
 import io.ktor.util.*
 import org.koin.core.logger.Level
@@ -19,6 +21,17 @@ import org.koin.logger.slf4jLogger
 @KtorExperimentalLocationsAPI
 fun main() {
 	embeddedServer(Netty, port = System.getenv("PORT").toInt()) {
+		install(CORS) {
+			anyHost()
+			allowXHttpMethodOverride()
+			method(HttpMethod.Get)
+			method(HttpMethod.Post)
+			method(HttpMethod.Options)
+			method(HttpMethod.Put)
+			method(HttpMethod.Delete)
+			header(HttpHeaders.ContentType)
+			allowCredentials = true
+		}
 		install(Koin) {
 			slf4jLogger(Level.ERROR)
 			modules(listOf(databaseModule, repositoryModule, controllerModule, routeModule))
