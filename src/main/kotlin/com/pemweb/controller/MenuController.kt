@@ -4,6 +4,7 @@ import com.oreyo.model.ingredient.IngredientBody
 import com.oreyo.model.review.ReviewBody
 import com.oreyo.model.step.StepBody
 import com.pemweb.data.ICoofitRepository
+import com.pemweb.helper.ResponseModelHelper.generalListSuccess
 import com.pemweb.helper.ResponseModelHelper.generalSuccess
 import com.pemweb.model.menu.MenuBody
 import io.ktor.application.*
@@ -33,16 +34,16 @@ class MenuController(
 		}
 	
 	override suspend fun ApplicationCall.getSomeMenus() =
-		this.generalSuccess { coofitRepository.getSomeMenus() }
+		this.generalListSuccess { coofitRepository.getSomeMenus() }
 	
 	override suspend fun ApplicationCall.getAllMenus() =
-		this.generalSuccess { coofitRepository.getAllMenus() }
+		this.generalListSuccess { coofitRepository.getAllMenus() }
 	
 	override suspend fun ApplicationCall.getMenuDetail(menuId: String) =
 		this.generalSuccess { coofitRepository.getMenuDetail(menuId) }
 	
 	override suspend fun ApplicationCall.searchMenu(query: String) =
-		this.generalSuccess { coofitRepository.searchMenu(query) }
+		this.generalListSuccess { coofitRepository.searchMenu(query) }
 	
 	override suspend fun ApplicationCall.getCaloriesPrediction(food: String) =
 		this.generalSuccess { coofitRepository.getCaloriesPrediction(food) }
