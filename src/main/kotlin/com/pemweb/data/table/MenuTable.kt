@@ -11,7 +11,7 @@ object MenuTable: Table() {
 	val difficulty = varchar("difficulty", 24)
 	val calories = integer("calories")
 	val cookTime = integer("cook_time")
-	val image = varchar("image", 64)
+	val image = varchar("image", 512)
 	val title = varchar("title", 128)
 	
 	override val primaryKey: PrimaryKey = PrimaryKey(menuId)

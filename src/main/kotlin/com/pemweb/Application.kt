@@ -23,14 +23,12 @@ fun main() {
 	embeddedServer(Netty, port = System.getenv("PORT").toInt()) {
 		install(CORS) {
 			anyHost()
-			allowXHttpMethodOverride()
 			method(HttpMethod.Get)
 			method(HttpMethod.Post)
 			method(HttpMethod.Options)
 			method(HttpMethod.Put)
 			method(HttpMethod.Delete)
 			header(HttpHeaders.ContentType)
-			allowCredentials = true
 		}
 		install(Koin) {
 			slf4jLogger(Level.ERROR)
