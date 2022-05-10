@@ -146,6 +146,7 @@ class CoofitRepository(
 				MenuTable.image,
 				Avg(ReviewTable.rating, 1).alias("rating"),
 				MenuTable.title,
+				MenuTable.videoUrl
 			)
 	}
 	
@@ -159,6 +160,7 @@ class CoofitRepository(
 				table[cookTime] = body.cookTime
 				table[image] = body.image
 				table[title] = body.title
+				table[videoUrl] = body.videoUrl
 			}
 		}
 	}

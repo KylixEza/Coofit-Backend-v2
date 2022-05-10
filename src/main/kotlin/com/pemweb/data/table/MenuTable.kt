@@ -13,6 +13,7 @@ object MenuTable: Table() {
 	val cookTime = integer("cook_time")
 	val image = varchar("image", 512)
 	val title = varchar("title", 128)
+	val videoUrl = varchar("video_url", length = 1024)
 	
 	override val primaryKey: PrimaryKey = PrimaryKey(menuId)
 }
