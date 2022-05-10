@@ -67,6 +67,7 @@ object Mapper {
 			reviews = reviews,
 			steps = steps,
 			title = row[MenuTable.title],
+			videoUrl = row[MenuTable.videoUrl]
 		)
 	}
 	
