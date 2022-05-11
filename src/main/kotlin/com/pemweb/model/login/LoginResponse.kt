@@ -3,7 +3,7 @@ package com.pemweb.model.login
 import com.google.gson.annotations.SerializedName
 
 data class LoginResponse(
-	@field:SerializedName("isExist")
+	@field:SerializedName("is_exist")
 	val isExist: Boolean,
 	
 	@field:SerializedName("uid")
