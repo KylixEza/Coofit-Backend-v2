@@ -14,6 +14,7 @@ object MenuTable: Table() {
 	val image = varchar("image", 512)
 	val title = varchar("title", 128)
 	val videoUrl = varchar("video_url", length = 1024)
+	val visited = integer("visited")
 	
 	override val primaryKey: PrimaryKey = PrimaryKey(menuId)
 }

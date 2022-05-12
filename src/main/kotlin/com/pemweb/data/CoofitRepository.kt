@@ -146,7 +146,8 @@ class CoofitRepository(
 				MenuTable.image,
 				Avg(ReviewTable.rating, 1).alias("rating"),
 				MenuTable.title,
-				MenuTable.videoUrl
+				MenuTable.videoUrl,
+				MenuTable.visited
 			)
 	}
 	
@@ -161,6 +162,7 @@ class CoofitRepository(
 				table[image] = body.image
 				table[title] = body.title
 				table[videoUrl] = body.videoUrl
+				table[visited] = 0
 			}
 		}
 	}
@@ -193,8 +195,12 @@ class CoofitRepository(
 		}
 	}
 	
-	override suspend fun getSomeMenus() =
-		getAllMenus().shuffled().take(20)
+	override suspend fun getTopMenus() = dbFactory.dbQuery {
+		getGeneralMenu().selectAll()
+			.groupBy(MenuTable.menuId)
+			.orderBy(MenuTable.visited, SortOrder.DESC)
+			.mapNotNull { Mapper.mapRowToMenuLiteResponse(it) }
+	}
 	
 	override suspend fun getAllMenus() = dbFactory.dbQuery {
 		getGeneralMenu().selectAll()

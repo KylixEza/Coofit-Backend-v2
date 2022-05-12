@@ -5,11 +5,9 @@ import com.pemweb.model.menu.MenuResponse
 import com.oreyo.model.review.ReviewBody
 import com.oreyo.model.step.StepBody
 import com.oreyo.model.user.UserResponse
-import com.pemweb.model.favorite.FavoriteBody
 import com.pemweb.model.login.LoginResponse
 import com.pemweb.model.menu.MenuBody
 import com.pemweb.model.menu.MenuLiteResponse
-import com.pemweb.model.prediction.PredictionBody
 import com.pemweb.model.prediction.PredictionResponse
 import com.pemweb.model.user.UserBody
 
@@ -26,7 +24,7 @@ interface ICoofitRepository {
 	suspend fun addNewIngredient(menuId: String, body: IngredientBody) //done
 	suspend fun addNewStep(menuId: String, body: StepBody) //done
 	suspend fun addNewReview(menuId: String, body: ReviewBody) //done
-	suspend fun getSomeMenus(): List<MenuLiteResponse> //done
+	suspend fun getTopMenus(): List<MenuLiteResponse> //done
 	suspend fun getAllMenus(): List<MenuLiteResponse> //done
 	suspend fun getMenuDetail(menuId: String): MenuResponse //done
 	suspend fun searchMenu(query: String): List<MenuLiteResponse> //done

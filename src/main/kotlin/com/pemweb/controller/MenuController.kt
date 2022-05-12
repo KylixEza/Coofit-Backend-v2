@@ -34,7 +34,7 @@ class MenuController(
 		}
 	
 	override suspend fun ApplicationCall.getSomeMenus() =
-		this.generalListSuccess { coofitRepository.getSomeMenus() }
+		this.generalListSuccess { coofitRepository.getTopMenus() }
 	
 	override suspend fun ApplicationCall.getAllMenus() =
 		this.generalListSuccess { coofitRepository.getAllMenus() }
