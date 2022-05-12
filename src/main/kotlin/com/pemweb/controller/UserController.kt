@@ -3,6 +3,7 @@ package com.pemweb.controller
 import com.pemweb.helper.ResponseModelHelper.generalSuccess
 import com.pemweb.data.ICoofitRepository
 import com.pemweb.helper.ResponseModelHelper.generalException
+import com.pemweb.helper.ResponseModelHelper.generalListSuccess
 import com.pemweb.model.favorite.FavoriteBody
 import com.pemweb.model.login.LoginBody
 import com.pemweb.model.user.UserBody
@@ -50,5 +51,5 @@ class UserController(
 		}
 	
 	override suspend fun ApplicationCall.getAllFavoritesByUser(uid: String) =
-		this.generalSuccess { coofitRepository.getAllFavoritesByUser(uid) }
+		this.generalListSuccess { coofitRepository.getAllFavoritesByUser(uid) }
 }
