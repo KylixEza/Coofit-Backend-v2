@@ -45,6 +45,9 @@ class MenuController(
 	override suspend fun ApplicationCall.searchMenu(query: String) =
 		this.generalListSuccess { coofitRepository.searchMenu(query) }
 	
+	override suspend fun ApplicationCall.updateVisitCount(menuId: String) =
+		this.generalSuccess("increased by 1") { coofitRepository.updateVisitCount(menuId) }
+	
 	override suspend fun ApplicationCall.getCaloriesPrediction(food: String) =
 		this.generalSuccess { coofitRepository.getCaloriesPrediction(food) }
 }

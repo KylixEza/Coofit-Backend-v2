@@ -9,7 +9,7 @@ import com.pemweb.model.menu.MenuBody
 import io.ktor.application.*
 import io.ktor.locations.*
 import io.ktor.routing.*
-
+import io.ktor.locations.put
 import io.ktor.locations.post
 import io.ktor.request.*
 
@@ -123,6 +123,18 @@ class MenuRoute(
 		}
 	}
 	
+	private fun Route.updateVisitCount() {
+		put<MenuRouteLocation.MenuVisitCountPutRoute> {
+			val menuId = try {
+				call.parameters["menuId"]
+			} catch (e: Exception) {
+				call.generalException(e)
+				return@put
+			}
+			controller.apply { menuId?.let { menuId -> call.updateVisitCount(menuId) } }
+		}
+	}
+	
 	private fun Route.getMenuCaloriesPrediction() {
 		get<MenuRouteLocation.MenuCaloriesPredictionGetRoute> {
 			val food = try {
@@ -145,6 +157,7 @@ class MenuRoute(
 			getTopMenu()
 			getAllMenus()
 			getMenuDetail()
+			updateVisitCount()
 			getMenuCaloriesPrediction()
 		}
 	}

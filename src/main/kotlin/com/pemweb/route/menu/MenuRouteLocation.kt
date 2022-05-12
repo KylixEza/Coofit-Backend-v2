@@ -21,6 +21,8 @@ sealed class MenuRouteLocation {
 		const val GET_ALL_MENUS = BASE_MENU
 		//GET
 		const val GET_MENU_DETAIL = BASE_SELECTED_MENU
+		//PUT
+		const val PUT_VISIT_COUNT = "${BASE_SELECTED_MENU}/visited"
 		//GET
 		const val GET_CALORIES_PREDICTION = "$BASE_MENU/prediction"
 	}
@@ -45,6 +47,9 @@ sealed class MenuRouteLocation {
 	
 	@Location(GET_MENU_DETAIL)
 	data class MenuDetailGetRoute(val menuId: String)
+	
+	@Location(PUT_VISIT_COUNT)
+	data class MenuVisitCountPutRoute(val menuId: String)
 	
 	@Location(GET_CALORIES_PREDICTION)
 	class MenuCaloriesPredictionGetRoute

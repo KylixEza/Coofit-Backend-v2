@@ -248,6 +248,20 @@ class CoofitRepository(
 			}
 	}
 	
+	override suspend fun updateVisitCount(menuId: String) = dbFactory.dbQuery {
+		val currentVisited = MenuTable.select {
+			MenuTable.menuId.eq(menuId)
+		}.firstNotNullOf {
+			it[MenuTable.visited]
+		}
+		
+		MenuTable.update(
+			where = {MenuTable.menuId.eq(menuId)}
+		) { table ->
+			table[visited] = currentVisited.plus(1)
+		}
+	}
+	
 	override suspend fun getCaloriesPrediction(food: String): PredictionResponse {
 		val menus = dbFactory.dbQuery {
 			MenuTable.selectAll().mapNotNull {
