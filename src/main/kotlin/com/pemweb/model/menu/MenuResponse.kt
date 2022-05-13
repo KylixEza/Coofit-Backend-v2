@@ -1,7 +1,7 @@
 package com.pemweb.model.menu
 
 import com.google.gson.annotations.SerializedName
-import com.oreyo.model.review.ReviewResponse
+import com.pemweb.model.review.ReviewResponse
 
 data class MenuResponse(
 	

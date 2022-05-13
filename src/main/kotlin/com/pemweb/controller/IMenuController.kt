@@ -1,8 +1,8 @@
 package com.pemweb.controller
 
-import com.oreyo.model.ingredient.IngredientBody
+import com.pemweb.model.ingredient.IngredientBody
 import com.oreyo.model.review.ReviewBody
-import com.oreyo.model.step.StepBody
+import com.pemweb.model.step.StepBody
 import com.pemweb.model.menu.MenuBody
 import io.ktor.application.*
 

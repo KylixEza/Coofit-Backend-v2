@@ -1,4 +1,4 @@
-package com.oreyo.model.ingredient
+package com.pemweb.model.ingredient
 
 import com.google.gson.annotations.SerializedName
 

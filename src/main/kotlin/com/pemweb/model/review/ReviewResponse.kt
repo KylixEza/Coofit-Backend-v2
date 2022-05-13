@@ -1,4 +1,4 @@
-package com.oreyo.model.review
+package com.pemweb.model.review
 
 import com.google.gson.annotations.SerializedName
 

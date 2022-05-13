@@ -1,4 +1,4 @@
-package com.oreyo.model.user
+package com.pemweb.model.user
 
 import com.google.gson.annotations.SerializedName
 

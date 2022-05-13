@@ -1,4 +1,4 @@
-package com.oreyo.model.step
+package com.pemweb.model.step
 
 import com.google.gson.annotations.SerializedName
 

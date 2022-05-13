@@ -1,10 +1,10 @@
 package com.pemweb.util
 
-import com.oreyo.model.ingredient.IngredientResponse
+import com.pemweb.model.ingredient.IngredientResponse
 import com.pemweb.model.menu.MenuResponse
-import com.oreyo.model.review.ReviewResponse
-import com.oreyo.model.step.StepResponse
-import com.oreyo.model.user.UserResponse
+import com.pemweb.model.review.ReviewResponse
+import com.pemweb.model.step.StepResponse
+import com.pemweb.model.user.UserResponse
 import com.pemweb.data.table.*
 import com.pemweb.model.login.LoginResponse
 import com.pemweb.model.menu.MenuLiteResponse

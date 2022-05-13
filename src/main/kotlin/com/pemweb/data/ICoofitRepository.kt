@@ -1,10 +1,10 @@
 package com.pemweb.data
 
-import com.oreyo.model.ingredient.IngredientBody
+import com.pemweb.model.ingredient.IngredientBody
 import com.pemweb.model.menu.MenuResponse
 import com.oreyo.model.review.ReviewBody
-import com.oreyo.model.step.StepBody
-import com.oreyo.model.user.UserResponse
+import com.pemweb.model.step.StepBody
+import com.pemweb.model.user.UserResponse
 import com.pemweb.model.login.LoginResponse
 import com.pemweb.model.menu.MenuBody
 import com.pemweb.model.menu.MenuLiteResponse

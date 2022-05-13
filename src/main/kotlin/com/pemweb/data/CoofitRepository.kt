@@ -1,9 +1,9 @@
 package com.pemweb.data
 
-import ReviewBody
+import com.pemweb.model.review.ReviewBody
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils
-import com.oreyo.model.ingredient.IngredientBody
-import com.oreyo.model.step.StepBody
+import com.pemweb.model.ingredient.IngredientBody
+import com.pemweb.model.step.StepBody
 import com.pemweb.model.user.UserBody
 import com.pemweb.data.database.DatabaseFactory
 import com.pemweb.data.table.*

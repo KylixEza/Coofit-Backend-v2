@@ -1,8 +1,8 @@
 package com.pemweb.route.menu
 
-import ReviewBody
-import com.oreyo.model.ingredient.IngredientBody
-import com.oreyo.model.step.StepBody
+import com.pemweb.model.review.ReviewBody
+import com.pemweb.model.ingredient.IngredientBody
+import com.pemweb.model.step.StepBody
 import com.pemweb.controller.IMenuController
 import com.pemweb.helper.ResponseModelHelper.generalException
 import com.pemweb.model.menu.MenuBody
