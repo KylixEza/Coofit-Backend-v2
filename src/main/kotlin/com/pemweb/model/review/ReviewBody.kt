@@ -1,5 +1,3 @@
-package com.oreyo.model.review
-
 import com.google.gson.annotations.SerializedName
 
 data class ReviewBody(

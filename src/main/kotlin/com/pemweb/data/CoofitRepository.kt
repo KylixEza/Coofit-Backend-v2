@@ -1,8 +1,8 @@
 package com.pemweb.data
 
+import ReviewBody
 import com.aventrix.jnanoid.jnanoid.NanoIdUtils
 import com.oreyo.model.ingredient.IngredientBody
-import com.oreyo.model.review.ReviewBody
 import com.oreyo.model.step.StepBody
 import com.pemweb.model.user.UserBody
 import com.pemweb.data.database.DatabaseFactory
@@ -86,6 +86,7 @@ class CoofitRepository(
 			UserTable.update(
 				where = {UserTable.uid.eq(uid)}
 			) { table ->
+				table[username] = body.username
 				table[address] = body.address ?: currentUser.address
 				table[avatar] = body.avatar ?: currentUser.avatar
 				table[coofitWallet] = body.coofitWallet ?: currentUser.coofitWallet
