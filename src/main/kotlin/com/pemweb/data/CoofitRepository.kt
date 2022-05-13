@@ -86,7 +86,7 @@ class CoofitRepository(
 			UserTable.update(
 				where = {UserTable.uid.eq(uid)}
 			) { table ->
-				table[username] = body.username
+				table[username] = body.username ?: currentUser.username
 				table[address] = body.address ?: currentUser.address
 				table[avatar] = body.avatar ?: currentUser.avatar
 				table[coofitWallet] = body.coofitWallet ?: currentUser.coofitWallet
