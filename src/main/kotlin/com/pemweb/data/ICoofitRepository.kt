@@ -2,13 +2,13 @@ package com.pemweb.data
 
 import com.pemweb.model.ingredient.IngredientBody
 import com.pemweb.model.menu.MenuResponse
-import com.oreyo.model.review.ReviewBody
 import com.pemweb.model.step.StepBody
 import com.pemweb.model.user.UserResponse
 import com.pemweb.model.login.LoginResponse
 import com.pemweb.model.menu.MenuBody
 import com.pemweb.model.menu.MenuLiteResponse
 import com.pemweb.model.prediction.PredictionResponse
+import com.pemweb.model.review.ReviewBody
 import com.pemweb.model.user.UserBody
 
 interface ICoofitRepository {
