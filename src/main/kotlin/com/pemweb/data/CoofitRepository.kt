@@ -7,12 +7,14 @@ import com.pemweb.model.step.StepBody
 import com.pemweb.model.user.UserBody
 import com.pemweb.data.database.DatabaseFactory
 import com.pemweb.data.table.*
+import com.pemweb.data.table.MenuTable.visited
 import com.pemweb.model.login.LoginResponse
 import com.pemweb.model.menu.MenuBody
 import com.pemweb.model.prediction.PredictionResponse
 import com.pemweb.util.Mapper
 import io.ktor.util.*
 import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.nield.kotlinstatistics.toNaiveBayesClassifier
 import java.util.*
 
@@ -200,6 +202,7 @@ class CoofitRepository(
 		getGeneralMenu().selectAll()
 			.groupBy(MenuTable.menuId)
 			.orderBy(MenuTable.visited, SortOrder.DESC)
+			.take(20)
 			.mapNotNull { Mapper.mapRowToMenuLiteResponse(it) }
 	}
 	
