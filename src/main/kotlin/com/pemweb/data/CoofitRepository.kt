@@ -269,7 +269,7 @@ class CoofitRepository(
 	override suspend fun getCaloriesPrediction(food: String): PredictionResponse {
 		val menus = dbFactory.dbQuery {
 			MenuTable.select {
-				LowerCase(MenuTable.title).like("%$food".lowercase(Locale.getDefault()))
+				LowerCase(MenuTable.title).like("$food%".lowercase(Locale.getDefault()))
 			}.mapNotNull {
 					Mapper.mapRowToPredictResponse(it)
 			}
