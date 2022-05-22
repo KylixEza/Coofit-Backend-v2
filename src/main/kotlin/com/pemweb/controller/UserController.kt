@@ -50,6 +50,9 @@ class UserController(
 			coofitRepository.deleteFavorite(uid, body.menuId)
 		}
 	
+	override suspend fun ApplicationCall.isFavorite(uid: String, menuId: String) =
+		this.generalSuccess { coofitRepository.isFavorite(uid, menuId) }
+	
 	override suspend fun ApplicationCall.getAllFavoritesByUser(uid: String) =
 		this.generalListSuccess { coofitRepository.getAllFavoritesByUser(uid) }
 }

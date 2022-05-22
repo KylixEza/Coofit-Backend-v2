@@ -30,4 +30,5 @@ interface ICoofitRepository {
 	suspend fun searchMenu(query: String): List<MenuLiteResponse> //done
 	suspend fun updateVisitCount(menuId: String): Int
 	suspend fun getCaloriesPrediction(food: String): PredictionResponse //done
+	suspend fun isFavorite(uid: String, menuId: String): Boolean
 }

@@ -20,6 +20,8 @@ sealed class UserRouteLocation {
 		//DELETE
 		const val DELETE_FAVORITE = "$BASE_SELECTED_USER/favorite"
 		//GET
+		const val GET_IS_FAVORITE = "$BASE_SELECTED_USER/favorite/{menuId}"
+		//GET
 		const val GET_FAVORITE = "$BASE_SELECTED_USER/favorite"
 	}
 	
@@ -40,6 +42,9 @@ sealed class UserRouteLocation {
 	
 	@Location(DELETE_FAVORITE)
 	data class UserFavoriteDeleteRoute(val uid: String)
+	
+	@Location(GET_IS_FAVORITE)
+	data class UserIsFavoriteGetRoute(val uid: String, val menuId: String)
 	
 	@Location(GET_FAVORITE)
 	data class UserFavoriteGetRoute(val uid: String)

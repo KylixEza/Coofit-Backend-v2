@@ -129,6 +129,26 @@ class UserRoute(
 		}
 	}
 	
+	private fun Route.isFavorite() {
+		get<UserRouteLocation.UserIsFavoriteGetRoute> {
+			val uid = try {
+				call.parameters["uid"]
+			} catch (e: Exception) {
+				call.generalException(e)
+				return@get
+			} ?: ""
+			
+			val menuId = try {
+				call.parameters["menuId"]
+			} catch (e: Exception) {
+				call.generalException(e)
+				return@get
+			} ?: ""
+			
+			controller.apply { call.isFavorite(uid, menuId) }
+		}
+	}
+	
 	fun Route.initRoute() {
 		this.apply {
 			postUser()
@@ -138,6 +158,7 @@ class UserRoute(
 			postFavoriteUser()
 			deleteFavoriteUser()
 			getFavoritesUser()
+			isFavorite()
 		}
 	}
 }

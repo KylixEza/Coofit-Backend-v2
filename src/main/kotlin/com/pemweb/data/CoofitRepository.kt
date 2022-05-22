@@ -136,6 +136,15 @@ class CoofitRepository(
 		}
 	}
 	
+	override suspend fun isFavorite(uid: String, menuId: String): Boolean = dbFactory.dbQuery {
+			val isEmpty = FavoriteTable.select {
+				FavoriteTable.uid.eq(uid) and FavoriteTable.menuId.eq(menuId)
+			}.map { it[FavoriteTable.uid] }.isEmpty()
+			
+			return@dbQuery !isEmpty
+		}
+	
+	
 	private fun getGeneralMenu(): FieldSet {
 		return MenuTable.join(ReviewTable, JoinType.LEFT) {
 			MenuTable.menuId.eq(ReviewTable.menuId)
