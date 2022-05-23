@@ -8,7 +8,7 @@ import io.ktor.locations.*
 sealed class UserRouteLocation {
 	companion object {
 		//POST
-		const val POST_USER = BASE_USER
+		const val POST_USER = "$BASE_USER/register"
 		//GET
 		const val GET_USER_ID = "$BASE_USER/login"
 		//GET
